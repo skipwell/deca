@@ -68,18 +68,6 @@ let issueCount: number = $derived(defIssues.filter(item => item == true).length)
         white-space: nowrap;
         width:80vw;
         flex-shrink: 0;
-  
-        mask-image: linear-gradient(
-            to right, 
-            transparent, 
-            black var(--left-fade), 
-            black calc(100% - var(--right-fade)), 
-            transparent
-        );
-        
-        scroll-timeline: --scroll-timeline x;
-        animation: adjust-fade linear both;
-        animation-timeline: --scroll-timeline;
     }
 
     #def-error {
@@ -101,45 +89,23 @@ let issueCount: number = $derived(defIssues.filter(item => item == true).length)
     }
 
 @media (max-width: 768px) {
+    #main{
+        font-size: 1rem;
+    }
     .component-container {
         flex-direction: column; 
         height: 80vh;
+        font-size: 1rem;
+        
     }
     .def-container {
         flex-direction: column; 
+        font-size: 1rem;
     }
 
     #def-error {
-        top: 0%
-    }
-}
-
-@property --left-fade {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 0px;
-}
-
-@property --right-fade {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 0px;
-}
-
-@keyframes adjust-fade {
-    0% {
-        --left-fade: 0vw;
-        --right-fade: 10vw;
-    }
-
-    1%, 99% {
-        --left-fade: 10vw;
-        --right-fade: 10vw;
-    }
-
-    100% {
-        --left-fade: 10vw;
-        --right-fade: 0px;
+        top: 0%;
+        font-size: 1rem;
     }
 }
 </style>

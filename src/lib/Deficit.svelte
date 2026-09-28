@@ -72,13 +72,18 @@ $effect(() => {
         border: 0;
         height: 2em;
         width: 70%;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
-    input::placeholder {
-        font-weight: bold;
-        opacity: 0.5;
-        color: red;
+    @media (max-width: 768px) {
+        input {
+            font-size: 1rem;
+        }
+        #def-issue{
+            font-size: 1rem;
+        }
+        .def-column{
+            font-size: 1.4rem;
+        }
     }
-
 </style>
