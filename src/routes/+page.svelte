@@ -40,7 +40,7 @@ let issueCount: number = $derived(defIssues.filter(item => item == true).length)
     </div>
     <div id="def-error">
         {#if issueCount >= 2}
-            <p>Organisation has recorded deficits exceeding 25% in the past 2 financial years.</p>
+            <p>The organisation has recorded deficits exceeding 25% of annual expenditure in the previous two financial years.</p>
         {/if}
     </div>
 </div>
