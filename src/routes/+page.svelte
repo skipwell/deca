@@ -47,10 +47,12 @@ let issueCount: number = $derived(defIssues.filter(item => item == true).length)
 
 <style>
     #main{
-        height:100vh;
+        min-height:100vh;
+        min-width: 100vw;
         display: flex;
         flex-direction: column;
         font-family: 'Open Sans';
+        position: absolute;
     }
     .component-container {
         display: flex;         
@@ -58,6 +60,7 @@ let issueCount: number = $derived(defIssues.filter(item => item == true).length)
         align-items: center;
         justify-content: space-between;
         height: 70vh;
+        width: calc(100% - 20px);
     }
 
     .def-container {
@@ -65,8 +68,8 @@ let issueCount: number = $derived(defIssues.filter(item => item == true).length)
         text-align: center;
         overflow: auto;
         overflow-x: auto;
-        white-space: nowrap;
         width:80vw;
+        justify-content: center;
         flex-shrink: 0;
     }
 
@@ -79,16 +82,21 @@ let issueCount: number = $derived(defIssues.filter(item => item == true).length)
     }
 
     #button {
-        width: 5vw;
-        height: 5vw;
+        min-width: 5vw;
+        min-height: 5vw;
+        padding: 20px 20px; 
         border-radius: 50%;
         flex-shrink: 0;
         font-size: 1rem;
         font-weight: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         top: -5vh;
     }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 70rem) {
     #main{
         font-size: 1rem;
     }

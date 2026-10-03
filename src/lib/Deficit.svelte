@@ -28,15 +28,15 @@ $effect(() => {
     <div class="def-container">
         <div class="def-column">
             <p>Income</p>
-            <input id="input" type="number" bind:value={income} placeholder=123 />
+            <input name="income" type="number" bind:value={income} placeholder=123 />
         </div>
         <div class="def-column">
             <p>Expenditure</p>
-            <input id="input" type="number" bind:value={expenditure} placeholder=456 />
+            <input name="deficit" type="number" bind:value={expenditure} placeholder=456 />
         </div>
         <div class="def-column">
             <p>Deficit limit (%)</p>
-            <input id="input" type="number" bind:value={percent} placeholder=25% />
+            <input name="deflimit" type="number" bind:value={percent} placeholder=25% />
         </div>
     </div>
 
@@ -44,7 +44,7 @@ $effect(() => {
         {#if defIssue}
             <p>deficit ({nzd.format(deficit)}) is greater than {percent}%.</p>
         {:else}
-            <p>no deficit issue.</p>
+            <p>income remaining: {nzd.format(deficit)}.</p>
         {/if}
     </div>
 </div>
@@ -75,7 +75,7 @@ $effect(() => {
         font-size: 1.4rem;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 70rem) {
         input {
             font-size: 1rem;
         }
